@@ -29,9 +29,9 @@ int main(void) {
     fill_array(a);
     fill_array(b);
 
-    cudaMalloc((void *)&d_a, N * sizeof(int));
-    cudaMalloc((void *)&d_b, N *sizeof(int));
-    cudaMalloc((void *)&d_c, N * sizeof(int));
+    cudaMalloc(&d_a, N * sizeof(int));
+    cudaMalloc(&d_b, N * sizeof(int));
+    cudaMalloc(&d_c, N * sizeof(int));
 
     cudaMemcpy(d_a, a, N * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(d_b, b, N* sizeof(int), cudaMemcpyHostToDevice);
